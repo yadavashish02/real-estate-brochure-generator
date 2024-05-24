@@ -1,0 +1,31 @@
+{
+  "name": "real-estate-brochure-generator-backend",
+  "version": "1.0.0",
+  "description": "Backend for the real estate brochure generator project",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yadavashish02/real-estate-brochure-generator.git"
+  },
+  "keywords": [
+    "llm",
+    "generative",
+    "ai",
+    "api"
+  ],
+  "author": "Ashish Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yadavashish02/real-estate-brochure-generator/issues"
+  },
+  "homepage": "https://github.com/yadavashish02/real-estate-brochure-generator#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.4",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
