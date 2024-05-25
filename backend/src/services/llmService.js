@@ -40,8 +40,8 @@ export async function generateCopy(tone, lengthOfCopy, featuresOfBuilding, brand
     try {
         const response = await axios.request(options)
     
-        const providerResponse = response.data.providers
-        const fallbackProviderResponse = response.data.fallbackProviders
+        const providerResponse = response.data[providers]
+        const fallbackProviderResponse = response.data[fallbackProviders]
 
         if (providerResponse && providerResponse.status === 'success') {
             return providerResponse.generated_text
@@ -50,7 +50,7 @@ export async function generateCopy(tone, lengthOfCopy, featuresOfBuilding, brand
             return fallbackProviderResponse.generated_text
         }
         else {
-            throw Error("eden api error")
+            throw new Error("eden api error")
         }
     } catch (error) {
         throw error
