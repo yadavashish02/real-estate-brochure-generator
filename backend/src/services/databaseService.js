@@ -19,6 +19,7 @@ export async function insertCopy(brandPositioning, featuresOfBuilding, tone, len
         if (error) {
             throw new Error("error inserting in supabase db")
         }
+        return data
     } catch (error) {
         throw error
     }
