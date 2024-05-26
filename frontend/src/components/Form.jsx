@@ -45,7 +45,7 @@ const Form = ({setOutput, formData, setFormData, TONE_OPTIONS, LENGTH_OPTIONS}) 
             <label htmlFor="features">Features of the property: </label>
             <TextBox
                 id="features"
-                name="lengthOfCopy"
+                name="featuresOfBuilding"
                 placeholder="5 Buildings, Fitness Center, Swimming Pool, Connectivity to near metro station"
                 onChange={handleChange}
             />

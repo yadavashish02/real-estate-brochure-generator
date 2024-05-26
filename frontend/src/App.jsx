@@ -22,6 +22,7 @@ function App() {
         alert("Output must be non empty")
         return
       }
+      console.log(formData)
       await insertApi({...formData, generatedCopy: output})
     } catch(error) {
       console.error(error)
