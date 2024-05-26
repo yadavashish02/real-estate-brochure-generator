@@ -32,9 +32,10 @@ ${completeText}
 ${selectedText}
 </SELECTED PORTION>
 
-Please make the text of the selection portion ${lengthModification}
+Please make the text of the selection portion ${lengthModification} in complete text
 
-Generate and return the complete text containing the modification, without providing any other information or sentences.
+Generate, modify the complete text and return the complete text containing the modification, without providing any other information or sentences.
+DO NOT RETURN THE TAGS USED.
 `
 }
 
