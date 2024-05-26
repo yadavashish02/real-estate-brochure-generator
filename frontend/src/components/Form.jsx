@@ -1,19 +1,8 @@
-import React, {useState} from 'react'
-import { TONE_OPTIONS, LENGTH_OPTIONS } from '../constants/options.js'
 import {generateApi} from '../api/generateApi.js'
 import DropDown from './DropDown.jsx'
 import TextBox from './TextBox.jsx'
 
-const toneDefault = Object.values(TONE_OPTIONS)[0]
-const lengthDefault = Object.values(LENGTH_OPTIONS)[0]
-
-const Form = ({setOutput}) => {
-    const [formData, setFormData] = useState({
-        tone: toneDefault,
-        lengthOfCopy: lengthDefault,
-        featuresOfBuilding: "",
-        brandPositioning: ""
-    })
+const Form = ({setOutput, formData, setFormData, TONE_OPTIONS, LENGTH_OPTIONS}) => {
 
     const handleChange = (event) => {
         setFormData((prevState) => ({
@@ -27,8 +16,9 @@ const Form = ({setOutput}) => {
         try {
             setOutput("Loading...")
             const result = await generateApi(formData)
-            setOutput(result)
+            setOutput(result.data.generatedText)
         } catch (error) {
+            console.error(error)
             alert("Some error ocurred")
         }
     }
