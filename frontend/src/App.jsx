@@ -8,7 +8,7 @@ const toneDefault = Object.values(TONE_OPTIONS)[0]
 const lengthDefault = Object.values(LENGTH_OPTIONS)[0]
 
 function App() {
-  const [output, setOutput] = useState("hello there")
+  const [output, setOutput] = useState("")
   const [formData, setFormData] = useState({
       tone: toneDefault,
       lengthOfCopy: lengthDefault,

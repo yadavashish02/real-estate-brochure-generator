@@ -1,6 +1,7 @@
 export default async function apiHandler(data, route) {
     try {
-        const response = await fetch(`${process.env.BACKEND_URL}${route}`, {
+        const url = `${import.meta.env.VITE_BACKEND_URL}${route}`
+        const response = await fetch(url, {
            method: "POST",
            headers: {
             "Content-Type": "application/json"
