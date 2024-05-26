@@ -2,13 +2,13 @@ import React, {useState} from "react"
 import Form from "./components/Form.jsx"
 import Output from "./components/Output.jsx"
 import {insertApi} from "./api/insertApi.js"
-import { TONE_OPTIONS, LENGTH_OPTIONS } from './constants/options.js'
+import { TONE_OPTIONS, LENGTH_OPTIONS } from './constants/Options.js'
 
 const toneDefault = Object.values(TONE_OPTIONS)[0]
 const lengthDefault = Object.values(LENGTH_OPTIONS)[0]
 
 function App() {
-  const [output, setOutput] = useState("")
+  const [output, setOutput] = useState("hello there")
   const [formData, setFormData] = useState({
       tone: toneDefault,
       lengthOfCopy: lengthDefault,
@@ -38,7 +38,7 @@ function App() {
     TONE_OPTIONS={TONE_OPTIONS}
     LENGTH_OPTIONS={LENGTH_OPTIONS}
     />
-    <Output output={output}/>
+    <Output output={output} setOutput={setOutput}/>
     <button onClick={handleInsert}>Insert in DB</button>
     </>
   )
