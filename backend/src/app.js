@@ -1,13 +1,13 @@
 import express from "express"
-import generateRoutes from './routes/generateRoutes.js'
-import insertRoutes from './routes/insertRoutes.js'
-import regenerateRoutes from "./routes/regenerateRoutes.js"
+import generateRoute from './routes/generateRoutes.js'
+import insertRoute from './routes/insertRoutes.js'
+import regenerateRoute from "./routes/regenerateRoutes.js"
 
 const app = express()
 const rootUrl = "/api/v1"
 app.use(express.json())
-app.use(rootUrl, generateRoutes)
-app.use(rootUrl, insertRoutes)
-app.use(rootUrl, regenerateRoutes)
+app.use(rootUrl, generateRoute)
+app.use(rootUrl, insertRoute)
+app.use(rootUrl, regenerateRoute)
 
 export default app
