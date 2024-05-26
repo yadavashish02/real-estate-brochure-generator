@@ -10,7 +10,6 @@ export default async function apiHandler(data, route) {
         })
 
         const result = await response.json()
-        console.log(result);
         return result
     } catch (error) {
         console.error(error)
