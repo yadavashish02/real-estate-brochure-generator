@@ -20,8 +20,25 @@ Make sure that the length of the copy is ${lengthOfCopy}
 `
 }
 
-export async function generateCopy(tone, lengthOfCopy, featuresOfBuilding, brandPositioning) {
-    const prompt = _getGeneratePrompt(tone, lengthOfCopy, featuresOfBuilding, brandPositioning)
+function _getRegeneratePrompt(completeText, selectedText, lengthModification) {
+    return `Please regenerate the narrative flow by modifying ONLY the selection portion of the complete text.
+    Do not regenerate any other aspect of the complete text and ONLY give the output.    
+
+<COMPLETE TEXT>
+${completeText}
+</COMPLETE TEXT>
+
+<SELECTED PORTION>
+${selectedText}
+</SELECTED PORTION>
+
+Please make the text of the selection portion ${lengthModification}
+
+Generate and return the complete text containing the modification, without providing any other information or sentences.
+`
+}
+
+async function _llmHelper(prompt) {
     const options = {
         method: "Post",
         url: url,
@@ -55,5 +72,14 @@ export async function generateCopy(tone, lengthOfCopy, featuresOfBuilding, brand
     } catch (error) {
         throw error
     }
-    
+}
+
+export async function generateCopy(tone, lengthOfCopy, featuresOfBuilding, brandPositioning) {
+    const prompt = _getGeneratePrompt(tone, lengthOfCopy, featuresOfBuilding, brandPositioning)
+    return await _llmHelper(prompt) 
+}
+
+export async function regenerateCopy(completeText, selectedText, lengthModification) {
+    const prompt = _getRegeneratePrompt(completeText, selectedText, lengthModification)
+    return await _llmHelper(prompt)
 }
