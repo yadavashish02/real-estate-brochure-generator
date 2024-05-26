@@ -41,7 +41,7 @@ const Output = ({output, setOutput}) => {
         <>
         <div>
         <div
-            style={{border: "2px solid black", marginTop: 10, padding: 5, marginBottom: 10, maxWidth: 600}}
+            style={{border: "2px solid black", marginTop: 10, padding: 5, marginBottom: 10}}
             ref={outputRef}
             onMouseUp={handleMouseUp}
         >
